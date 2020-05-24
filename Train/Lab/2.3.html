@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Get Ajax</title>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        function country() {
+            var cnt = $('#cnt').val();
+            $.post('2.3.php', {country:cnt},
+                function (val) {
+                    $('#here').html(val);
+                }
+                );
+        }
+    </script>
+</head>
+<body>
+<div id="here">HERE</div>
+<form>
+    <input placeholder="Enter country" id="cnt" class="cnt" type="text">
+    <input type="button" value="Piu Piu" id="piu" onclick="country()">
+</form>
+</body>
+</html>

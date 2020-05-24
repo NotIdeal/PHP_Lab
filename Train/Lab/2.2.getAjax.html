@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Get Ajax</title>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        function pon4ik() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("here").innerHTML = this.responseText;
+                }
+            };
+            xhttp.open("GET", "2.2.php", true);
+            xhttp.send();
+        }
+    </script>
+</head>
+<body>
+<div id="here">HERE</div>
+<input id="ket" type="button" value="Get" onclick="pon4ik()">
+</body>
+</html>

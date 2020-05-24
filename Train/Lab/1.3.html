@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BeGood</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        .but1{
+            position: absolute;
+            z-index: 2;
+            width: 100px;
+        }
+        .but2{
+            position: absolute;
+            z-index: 2;
+            left: 10%;
+        }
+        html, body
+        {
+            height: 100%;
+            margin: 0;
+            text-align:center;
+        }
+        .full
+        {
+            display: flex;
+            flex-wrap: wrap;
+            height:100%;
+        }
+        .header, .footer
+        {
+            background-color: palegreen;
+            height:15%;
+            width: 100%;
+        }
+        .left, .right
+        {
+            background-color: aqua;
+            width: 20%;
+            height: 70%;
+        }
+        .main
+        {
+            background-color: lightblue;
+            width: 60%;
+            height:70%;
+        }
+    </style>
+    <script>
+        $(document).ready(function()
+        {
+            var check = false;
+            $("#rvb").click(function()
+            {
+
+                if(check == false){
+                    $('.header, .footer, .left, .right').fadeTo(2000, 0.0);
+                    check = true;
+                } else{
+                    $('.header, .footer, .left, .right').fadeTo(2000, 1);
+                    check = false;
+                }
+
+            });
+            $("#sb").click(function()
+            {
+                $('.header, .footer, .left, .right').stop();
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="full">
+
+    <div class="but1">
+        <input type="button" value="reader view" id="rvb">
+    </div>
+    <div class="but2">
+        <input type="button" value="stop" id="sb">
+    </div>
+    <div class="header">
+        <h1>website header</h1>
+    </div>
+    <div class="left">
+        <h1>website left part</h1>
+    </div>
+    <div class="main">
+        <h1>website main part</h1>
+    </div>
+    <div class="right">
+        <h1>website right part</h1>
+    </div>
+    <div class="footer">
+        <h1>website footer</h1>
+    </div>
+</div>
+</body>
+</html>
